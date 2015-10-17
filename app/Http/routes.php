@@ -12,4 +12,8 @@
 */
 
 // Pages routes...
-Route::get('/',              ['as' => 'home',    'uses' => 'PagesController@home']);
+Route::get('/',              ['as' => 'home',     'uses' => 'PagesController@home']);
+Route::get('about',          ['as' => 'about',    'uses' => 'PagesController@about']);
+Route::get('stylists',       ['as' => 'stylists', 'uses' => 'PagesController@stylists']);
+Route::get('products',       ['as' => 'products', 'uses' => 'PagesController@products']);
+Route::get('contact',        ['as' => 'contact',  'uses' => 'PagesController@contact']);
