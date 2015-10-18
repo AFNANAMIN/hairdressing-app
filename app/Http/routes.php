@@ -17,3 +17,12 @@ Route::get('about',          ['as' => 'about',    'uses' => 'PagesController@abo
 Route::get('stylists',       ['as' => 'stylists', 'uses' => 'PagesController@stylists']);
 Route::get('products',       ['as' => 'products', 'uses' => 'PagesController@products']);
 Route::get('contact',        ['as' => 'contact',  'uses' => 'PagesController@contact']);
+
+// Authentication routes...
+Route::get('auth/login',     ['as' => 'auth.login',      'uses' => 'Auth\AuthController@getLogin']);
+Route::post('auth/login',    ['as' => 'auth.accept',     'uses' => 'Auth\AuthController@postLogin']);
+Route::get('auth/logout',    ['as' => 'auth.logout',     'uses' => 'Auth\AuthController@getLogout']);
+
+// Password reset link request routes...
+Route::get('password/email',    ['as' => 'password.email',  'uses' => 'Auth\PasswordController@getEmail']);
+Route::post('password/email',   ['as' => 'password.send',   'uses' => 'Auth\PasswordController@postEmail']);
