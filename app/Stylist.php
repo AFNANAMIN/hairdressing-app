@@ -16,7 +16,10 @@ class Stylist extends Model implements StaplerableInterface
 	public function __construct(array $attributes = array()) {
         $this->hasAttachedFile('photo', [
             'styles' => [
-                'medium' => '500x500',
+                'medium' => [
+                    'dimensions' => '250x250',
+                    'convert_options' => ['quality' => 100]
+                    ],
                 'thumb'  => '100x100'
             ]
         ]);

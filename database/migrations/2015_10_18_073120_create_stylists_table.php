@@ -15,7 +15,6 @@ class CreateStylistsTable extends Migration
         Schema::create('stylists', function (Blueprint $table) {
             $table->increments('id');
             $table->string('first_name');
-            $table->string('last_name');
             $table->text('bio');
             $table->timestamps();
             $table->string('photo_file_name')->nullable();

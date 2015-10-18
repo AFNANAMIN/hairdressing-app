@@ -6,8 +6,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Stylist;
+
 class StylistsController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -16,7 +23,8 @@ class StylistsController extends Controller
      */
     public function create()
     {
-        //
+        $stylist = new Stylist;
+        return view('stylists.create', compact('stylist'));
     }
 
     /**
@@ -27,7 +35,11 @@ class StylistsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Create and save a new stylist, mass assigning all of the input fields.
+        $stylist = new Stylist($request->all());
+        $stylist->save();
+
+        return redirect()->route('stylists');
     }
 
     /**
@@ -38,7 +50,8 @@ class StylistsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $stylist = Stylist::find($id);
+        return view('stylists.edit', compact('stylist'));
     }
 
     /**
@@ -50,7 +63,12 @@ class StylistsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $stylist = Stylist::findOrFail($id);
+        $stylist->fill($request->all());
+        $stylist->save();
+
+        return redirect()->route('stylists')
+            ->with('status.success', 'Success! The stylist is now updated!');;
     }
 
     /**
