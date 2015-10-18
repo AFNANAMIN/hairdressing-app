@@ -79,6 +79,9 @@ class StylistsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stylist = Stylist::find($id);
+        $stylist->delete();
+
+        return redirect()->route('stylists');
     }
 }
