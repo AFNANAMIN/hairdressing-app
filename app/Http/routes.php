@@ -29,3 +29,6 @@ Route::post('password/email',   ['as' => 'password.send',   'uses' => 'Auth\Pass
 
 // Stylist resource routes...
 Route::resource('stylists', 'StylistsController', [ 'only' => ['create', 'store', 'update', 'edit', 'destroy'] ]);
+
+// Product resource routes...
+Route::resource('products', 'ProductsController', [ 'only' => ['create', 'store', 'update', 'edit', 'destroy'] ]);
