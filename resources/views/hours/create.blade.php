@@ -5,9 +5,9 @@
 
     <h1 class="text-center">Add a new season</h1>
 
-    {!! Form::open(['route' => 'products.store', 'class' => 'form-horizontal', 'files' => true]) !!}
+    {!! Form::open(['route' => 'hours.store', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-      @include('products._form')
+      @include('hours._form')
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
