@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->enum('brand', ['joico', 'keune']);
+            $table->integer('order');
             $table->timestamps();
         });
     }
