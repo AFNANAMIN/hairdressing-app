@@ -18,6 +18,7 @@ Route::get('stylists',          ['as' => 'stylists', 'uses' => 'PagesController@
 Route::get('products',          ['as' => 'products', 'uses' => 'PagesController@products']);
 Route::get('contact',           ['as' => 'contact',  'uses' => 'PagesController@contact']);
 Route::get('panel',             ['as' => 'panel',    'uses' => 'PagesController@panel']);
+Route::get('sitemap',           ['as' => 'sitemap',  'uses' => 'PagesController@sitemap']);
 
 // Authentication routes...
 Route::get('auth/login',        ['as' => 'auth.login',      'uses' => 'Auth\AuthController@getLogin']);
