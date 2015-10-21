@@ -5,7 +5,7 @@
 
     <h1 class="text-center">Edit product</h1>
 
-    {!! Form::open(['route' => ['products.update', $product->id], 'class' => 'form-horizontal', 'files' => true]) !!}
+    {!! Form::open(['route' => ['products.update', $product->id], 'class' => 'form-horizontal']) !!}
 
       {!! Form::hidden('_method', 'PUT') !!}
 

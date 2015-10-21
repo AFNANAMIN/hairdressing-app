@@ -12,27 +12,28 @@
 */
 
 // Pages routes...
-Route::get('/',                 ['as' => 'home',     'uses' => 'PagesController@home']);
-Route::get('about',             ['as' => 'about',    'uses' => 'PagesController@about']);
-Route::get('stylists',          ['as' => 'stylists', 'uses' => 'PagesController@stylists']);
-Route::get('products',          ['as' => 'products', 'uses' => 'PagesController@products']);
-Route::get('contact',           ['as' => 'contact',  'uses' => 'PagesController@contact']);
-Route::get('panel',             ['as' => 'panel',    'uses' => 'PagesController@panel']);
-Route::get('sitemap',           ['as' => 'sitemap',  'uses' => 'PagesController@sitemap']);
+Route::get('/',                  ['as' => 'home',     'uses' => 'PagesController@home']);
+Route::get('about',              ['as' => 'about',    'uses' => 'PagesController@about']);
+Route::get('stylists',           ['as' => 'stylists', 'uses' => 'PagesController@stylists']);
+Route::get('products',           ['as' => 'products', 'uses' => 'PagesController@products']);
+Route::get('contact',            ['as' => 'contact',  'uses' => 'PagesController@contact']);
+Route::get('panel',              ['as' => 'panel',    'uses' => 'PagesController@panel']);
+Route::get('sitemap',            ['as' => 'sitemap',  'uses' => 'PagesController@sitemap']);
 
 // Authentication routes...
-Route::get('auth/login',        ['as' => 'auth.login',      'uses' => 'Auth\AuthController@getLogin']);
-Route::post('auth/login',       ['as' => 'auth.accept',     'uses' => 'Auth\AuthController@postLogin']);
-Route::get('auth/logout',       ['as' => 'auth.logout',     'uses' => 'Auth\AuthController@getLogout']);
+Route::get('auth/login',         ['as' => 'auth.login',      'uses' => 'Auth\AuthController@getLogin']);
+Route::post('auth/login',        ['as' => 'auth.accept',     'uses' => 'Auth\AuthController@postLogin']);
+Route::get('auth/logout',        ['as' => 'auth.logout',     'uses' => 'Auth\AuthController@getLogout']);
 
 // Password reset link request routes...
-Route::get('password/email',    ['as' => 'password.email',  'uses' => 'Auth\PasswordController@getEmail']);
-Route::post('password/email',   ['as' => 'password.send',   'uses' => 'Auth\PasswordController@postEmail']);
+Route::get('password/email',     ['as' => 'password.email',  'uses' => 'Auth\PasswordController@getEmail']);
+Route::post('password/email',    ['as' => 'password.send',   'uses' => 'Auth\PasswordController@postEmail']);
 
 // Stylist resource routes...
 Route::resource('stylists', 'StylistsController', [ 'only' => ['create', 'store', 'update', 'edit', 'destroy'] ]);
 
 // Product resource routes...
+Route::post('products.featured', ['as' => 'products.featured',     'uses' => 'ProductsController@featured']);
 Route::resource('products', 'ProductsController', [ 'only' => ['create', 'store', 'update', 'edit', 'destroy'] ]);
 
 // Hours resource routes...
