@@ -37,6 +37,11 @@ class HoursController extends Controller
     {
         // Create and save a new season, mass assigning all of the input fields.
         $hours = new Hours($request->all());
+        $this->validate($request, [
+            'season' => 'required',
+            'description' => 'required',
+            'active' => 'required'
+        ]);
         $hours->save();
 
         return redirect()->route('contact');
@@ -65,6 +70,11 @@ class HoursController extends Controller
     {
         $hours = hours::findOrFail($id);
         $hours->fill($request->all());
+        $this->validate($request, [
+            'season' => 'required',
+            'description' => 'required',
+            'active' => 'required'
+        ]);
         $hours->save();
 
         return redirect()->route('contact')

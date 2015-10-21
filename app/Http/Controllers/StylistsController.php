@@ -37,6 +37,11 @@ class StylistsController extends Controller
     {
         // Create and save a new stylist, mass assigning all of the input fields.
         $stylist = new Stylist($request->all());
+        $this->validate($request, [
+            'first_name' => 'required',
+            'bio' => 'required',
+            'photo' => 'required'
+        ]);
         $stylist->save();
 
         return redirect()->route('stylists');
@@ -65,6 +70,11 @@ class StylistsController extends Controller
     {
         $stylist = Stylist::findOrFail($id);
         $stylist->fill($request->all());
+        $this->validate($request, [
+            'first_name' => 'required',
+            'bio' => 'required',
+            'photo' => 'required'
+        ]);
         $stylist->save();
 
         return redirect()->route('stylists')
