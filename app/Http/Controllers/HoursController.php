@@ -44,7 +44,7 @@ class HoursController extends Controller
         ]);
         $hours->save();
 
-        return redirect()->route('contact');
+        return redirect()->route('panel');
     }
 
     /**
@@ -77,7 +77,7 @@ class HoursController extends Controller
         ]);
         $hours->save();
 
-        return redirect()->route('contact')
+        return redirect()->route('panel')
             ->with('status.success', 'Success! The hours are now updated!');;
     }
 
