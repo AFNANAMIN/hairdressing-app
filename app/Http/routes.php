@@ -20,6 +20,9 @@ Route::get('contact',            ['as' => 'contact',  'uses' => 'PagesController
 Route::get('panel',              ['as' => 'panel',    'uses' => 'PagesController@panel']);
 Route::get('sitemap',            ['as' => 'sitemap',  'uses' => 'PagesController@sitemap']);
 
+// Mailing Routes
+Route::post('mail',              ['as' => 'mail',     'uses' => 'MailController@mail']);
+
 // Authentication routes...
 Route::get('auth/login',         ['as' => 'auth.login',      'uses' => 'Auth\AuthController@getLogin']);
 Route::post('auth/login',        ['as' => 'auth.accept',     'uses' => 'Auth\AuthController@postLogin']);
