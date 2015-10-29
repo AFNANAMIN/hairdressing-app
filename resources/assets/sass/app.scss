@@ -1,18 +1,8 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "_slider.scss";
+@import "_map.scss";
+@import "_footer.scss";
 
 body {
     padding-top: 70px;
-}
-
-#map-canvas {
-	height: 250px;
-	width: 100%;
-}
-
-footer {
-	margin-top: 50px;
-	padding-top: 10px;
-	padding-bottom: 50px;
-	background-color: #333;
-	color: #fff;
 }
