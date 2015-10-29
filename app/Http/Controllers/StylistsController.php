@@ -44,7 +44,7 @@ class StylistsController extends Controller
         ]);
         $stylist->save();
 
-        return redirect()->route('stylists');
+        return redirect(route('panel') . '#stylists');
     }
 
     /**
@@ -72,13 +72,11 @@ class StylistsController extends Controller
         $stylist->fill($request->all());
         $this->validate($request, [
             'first_name' => 'required',
-            'bio' => 'required',
-            'photo' => 'required'
+            'bio' => 'required'
         ]);
         $stylist->save();
 
-        return redirect()->route('stylists')
-            ->with('status.success', 'Success! The stylist is now updated!');;
+        return redirect(route('panel') . '#stylists');
     }
 
     /**
@@ -92,6 +90,6 @@ class StylistsController extends Controller
         $stylist = Stylist::find($id);
         $stylist->delete();
 
-        return redirect()->route('stylists');
+        return redirect(route('panel') . '#stylists');
     }
 }

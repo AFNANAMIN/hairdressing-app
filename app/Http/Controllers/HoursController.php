@@ -44,7 +44,7 @@ class HoursController extends Controller
         ]);
         $hours->save();
 
-        return redirect()->route('panel');
+        return redirect(route('panel') . '#hours');
     }
 
     /**
@@ -77,8 +77,7 @@ class HoursController extends Controller
         ]);
         $hours->save();
 
-        return redirect()->route('panel')
-            ->with('status.success', 'Success! The hours are now updated!');;
+        return redirect(route('panel') . '#hours');
     }
 
     /**
@@ -92,6 +91,6 @@ class HoursController extends Controller
         $hours = Hours::find($id);
         $hours->delete();
 
-        return redirect()->route('contact');
+        return redirect(route('panel') . '#hours');
     }
 }
