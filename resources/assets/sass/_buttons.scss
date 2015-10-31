@@ -3,17 +3,17 @@
 }
 
 .btn-success {
-	background-color: #7bb9fa;
+	background-color: $logo-accent;
 	font-variant: small-caps;
-	border-color: #7bb9fa;
+	border-color: $logo-accent;
 
 	&:hover, &:focus, &:active, &.active {
-		background-color: #6799ce;
-		border-color: #6799ce;
+		background-color: $logo-accent-active;
+		border-color: $logo-accent-active;
 	}
 }
 
 .btn-success:active:focus {
-	background-color: #6799ce;
-	border-color: #6799ce;
+	background-color: $logo-accent-active;
+	border-color: $logo-accent-active;
 }
