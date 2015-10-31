@@ -1,5 +1,7 @@
 .reviews {
 	background-color: #d7e9e9;
+	padding-bottom: 40px;
+    padding-top: 15px;
 
 	.item {
 		padding-bottom: 70px;
@@ -8,5 +10,22 @@
 			max-width: 60%;
 			margin: 0 auto;
 		}
+	}
+
+	.slick-prev, .slick-next {
+		top: 10%;
+		
+		&:before {
+			color: #333;
+		}
+	}
+
+	.slick-dots li button:before {
+		font-size: 12px;
+		color: #333;
+	}
+
+	.slick-dots li.slick-active button:before {
+	    color: #333;
 	}
 }
