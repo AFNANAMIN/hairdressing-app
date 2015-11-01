@@ -1,6 +1,7 @@
 .btn {
 	border-radius: 0;
-	font-variant: small-caps;
+	text-transform: uppercase;
+	font-size: 16px;
 }
 
 .btn-success {
@@ -16,4 +17,12 @@
 .btn-success:active:focus {
 	background-color: $logo-accent-active;
 	border-color: $logo-accent-active;
+}
+
+.btn-fixed {
+	width: 31%;
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+	}
 }

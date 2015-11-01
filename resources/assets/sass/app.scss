@@ -11,6 +11,7 @@
 
 body {
     padding-top: 50px;
+    font-size: 16px;
 }
 
 .accent-div {
@@ -20,4 +21,21 @@ body {
 
 .padded-div {
 	margin-bottom: 60px;
+}
+
+.padded-panel {
+	margin-top: 25px;
+	margin-bottom: 35px;
+}
+
+.services {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		list-style-type: none;
+		padding: 5px 0;
+	}
 }
