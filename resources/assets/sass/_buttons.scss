@@ -1,10 +1,10 @@
 .btn {
 	border-radius: 0;
+	font-variant: small-caps;
 }
 
 .btn-success {
 	background-color: $logo-accent;
-	font-variant: small-caps;
 	border-color: $logo-accent;
 
 	&:hover, &:focus, &:active, &.active {
