@@ -1,0 +1,15 @@
+.form-horizontal {
+	margin: 0 15px;
+}
+
+.inline-field {
+	@media screen and (min-width: 769px) {
+		max-width: 48%;
+	}
+}
+
+.phone-field {
+	@media screen and (min-width: 769px) {
+		float: right;
+	}
+}
