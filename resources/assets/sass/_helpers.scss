@@ -23,3 +23,23 @@
 .img-responsive {
     margin: 0 auto;
 }
+
+.bordered-div {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+.breadcrumb > li + li:before {
+    content: "/\00a0";
+    color: $breadcrumb-color;
+}
+
+.breadcrumb {
+	a {
+		color: #333;
+    	text-decoration: none;
+    	&:hover {
+    		color: $logo-accent-active;
+    	}
+    }
+}
