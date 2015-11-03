@@ -1,9 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
-  <div class="container">
+  <div class="admin-header"> <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+                <p class="subheading">Edit Season<p>
+            </div>
+          </div>
+          </div>
+        </div> <!-- / container -->
+    </div> <!-- / jumbotron -->
 
-    <h1 class="text-center">Edit season</h1>
+  <div class="container padded-div">
+
+    <p class="text-center subheading">{{ $hours->season }}</p>
 
     {!! Form::open(['route' => ['hours.update', $hours->id], 'class' => 'form-horizontal', 'files' => true]) !!}
 
@@ -19,8 +31,14 @@
 
     {!! Form::close() !!} {{-- /.form --}}
 
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-10">
+        <a class="btn btn-default" href="{{ route('panel') }}#hours" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Back to Admin Panel</a>
+      </div>
+    </div>
+
     <hr>
-    <h1 class="text-center">Delete hours</h1>
+    <p class="text-center subheading">Delete hours</p>
 
     {!! Form::open(['route' => ['hours.destroy', $hours->id], 'class' => 'form-horizontal', 'method' => 'delete']) !!}
 
