@@ -33,6 +33,6 @@ class MailController extends Controller
             $m->to('euphoriahairdressing@gmail.com')->subject('Website booking request');
         });
 
-        return redirect()->route('contact');
+        return redirect()->route('home');
     }
 }
