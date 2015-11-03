@@ -1,11 +1,22 @@
 @extends('layouts.master')
 
 @section('content')
-  <div class="container">
+  <div class="admin-header"> <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+                <p class="subheading">Admin Panel<p>
+            </div>
+          </div>
+          </div>
+        </div> <!-- / container -->
+    </div> <!-- / jumbotron -->
+  <div class="container padded-div">
+
+    <p class="text-center subheading">Reset Password</p>
 
     {!! Form::open(['route' => 'password.send', 'class' => 'form-signin']) !!}
-
-      <h1>Reset Password</h1>
 
       @if(count($errors) > 0)
         <div class="alert alert-danger">There were problems with your form. Please fix them.</div>
