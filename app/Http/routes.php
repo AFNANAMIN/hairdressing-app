@@ -32,6 +32,10 @@ Route::get('auth/logout',        ['as' => 'auth.logout',     'uses' => 'Auth\Aut
 Route::get('password/email',     ['as' => 'password.email',  'uses' => 'Auth\PasswordController@getEmail']);
 Route::post('password/email',    ['as' => 'password.send',   'uses' => 'Auth\PasswordController@postEmail']);
 
+// Password reset routes...
+Route::get('password/reset/{token}',    ['as' => 'password.reset',  'uses' => 'Auth\PasswordController@getReset']);
+Route::post('password/reset',           ['as' => 'password.accept', 'uses' => 'Auth\PasswordController@postReset']);
+
 // Stylist resource routes...
 Route::resource('stylists', 'StylistsController', [ 'only' => ['create', 'store', 'update', 'edit', 'destroy'] ]);
 
