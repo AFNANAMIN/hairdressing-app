@@ -1,6 +1,6 @@
 @if(Auth::check())
 	<p>
-		<a href="{{ route('stylists.edit', $stylist->id) }}" class="btn btn-success btn-block btn-stylist">
+		<a href="{{ route('stylists.edit', $stylist->id) }}" class="btn btn-default btn-block btn-stylist">
 			<span class="glyphicon glyphicon-pencil"></span> Edit {{ $stylist->first_name }}
 		</a>
 	</p>
