@@ -31,3 +31,18 @@
 	max-width: 250px;
 	margin: 0 auto;
 }
+
+.btn-danger {
+	background-color: #f75353;
+	border-color: #f75353;
+
+	&:hover, &:focus, &:active, &.active {
+		background-color: #d64f4f;
+		border-color: #d64f4f;
+	}
+}
+
+.btn-danger:active:focus {
+	background-color: #d64f4f;
+	border-color: #d64f4f;
+}
