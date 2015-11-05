@@ -22,6 +22,7 @@ Route::get('sitemap',            ['as' => 'sitemap',  'uses' => 'PagesController
 
 // Mailing Routes
 Route::post('mail',              ['as' => 'mail',     'uses' => 'MailController@mail']);
+Route::get('thanks',             ['as' => 'thanks',   'uses' => 'MailController@thanks']);
 
 // Authentication routes...
 Route::get('auth/login',         ['as' => 'auth.login',      'uses' => 'Auth\AuthController@getLogin']);
