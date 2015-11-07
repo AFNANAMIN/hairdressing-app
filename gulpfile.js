@@ -18,8 +18,7 @@ elixir(function(mix) {
       './resources/assets/js');
     mix.scripts([
       'jquery-2.1.4.min.js',
-      'bootstrap.min.js',
-      'main.js'
+      'bootstrap.min.js'
     ]);
     mix.copy('./node_modules/bootstrap-sass/assets/fonts/**', 'public/build/fonts');
     mix.version([

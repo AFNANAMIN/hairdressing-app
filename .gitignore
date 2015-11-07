@@ -6,5 +6,6 @@ Homestead.json
 .DS_Store
 public/build
 public/css
-public/js
+public/js/all.js
+public/js/all.js.map
 public/system
