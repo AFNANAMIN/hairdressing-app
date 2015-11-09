@@ -17,6 +17,7 @@ class CreateHoursTable extends Migration
             $table->string('season');
             $table->text('description');
             $table->boolean('active');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

@@ -16,6 +16,7 @@ class CreateStylistsTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->text('bio');
+            $table->string('slug')->unique();
             $table->timestamps();
             $table->string('photo_file_name')->nullable();
             $table->integer('photo_file_size')->nullable();

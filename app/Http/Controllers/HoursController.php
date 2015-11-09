@@ -37,6 +37,21 @@ class HoursController extends Controller
     {
         // Create and save a new season, mass assigning all of the input fields.
         $hours = new Hours($request->all());
+        $hours->slug = str_slug($request->season);
+
+        $latestSlug = 
+                    Hours::whereRaw("slug RLIKE '^{$hours->slug}(-[0-9]*)?$'")
+                    ->latest('id')
+                    ->pluck('slug');
+
+        if ($latestSlug) {
+            $pieces = explode('-', $latestSlug);
+
+            $number = intval(end($pieces));
+
+            $post->slug .= '-' . ($number + 1);
+        }
+        
         $this->validate($request, [
             'season' => 'required',
             'description' => 'required',
@@ -55,7 +70,7 @@ class HoursController extends Controller
      */
     public function edit($id)
     {
-        $hours = hours::find($id);
+        $hours = Hours::find($id);
         return view('hours.edit', compact('hours'));
     }
 
@@ -68,7 +83,7 @@ class HoursController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $hours = hours::findOrFail($id);
+        $hours = Hours::findOrFail($id);
         $hours->fill($request->all());
         $this->validate($request, [
             'season' => 'required',
