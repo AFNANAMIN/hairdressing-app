@@ -32,7 +32,14 @@
 
     <div class="row">
       <div class="col-sm-offset-2 col-sm-10">
-        <a class="btn btn-default" href="{{ route('panel') }}#products" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Back to Admin Panel</a>
+        <?php
+          if ($product->brand == "joico") {
+            $hash = '#joico';
+          } else {
+            $hash = '#keune';
+          }
+        ?>
+        <a class="btn btn-default" href="{{ route('panel') }}{{$hash}}" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Back to Admin Panel</a>
       </div>
     </div>
 
