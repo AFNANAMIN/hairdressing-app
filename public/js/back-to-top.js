@@ -10,14 +10,12 @@ $('a.back-to-top').click(function() {
 
 $(window).resize(function() {
 	if (window.innerWidth < 900) {
-		console.log("hidden");
 	    $('a.back-to-top').hide();
 	}
 });
 
 $(window).scroll(function() {
 	if (window.innerWidth >= 900){
-		console.log($(window).scrollTop());
 		if ( $(window).scrollTop() > showAfterScrolled ) {
 			$('a.back-to-top').fadeIn('slow');
 		} else {
@@ -27,7 +25,6 @@ $(window).scroll(function() {
 });
 
 $(document).ready(function() {
-	console.log('ready', window.innerWidth);
 	if (window.innerWidth < 900) {
 		console.log("hidden");
 	    $('a.back-to-top').hide();
