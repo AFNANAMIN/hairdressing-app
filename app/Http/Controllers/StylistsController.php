@@ -51,12 +51,12 @@ class StylistsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $stylist = Stylist::find($id);
+        $stylist = Stylist::whereSlug($slug)->firstOrFail();
         return view('stylists.edit', compact('stylist'));
     }
 

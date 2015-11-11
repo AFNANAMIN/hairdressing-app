@@ -51,12 +51,12 @@ class HoursController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $slug
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $hours = Hours::find($id);
+        $hours = Hours::whereSlug($slug)->firstOrFail();
         return view('hours.edit', compact('hours'));
     }
 
