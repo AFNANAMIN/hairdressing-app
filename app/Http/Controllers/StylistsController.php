@@ -38,21 +38,6 @@ class StylistsController extends Controller
         // Create and save a new stylist, mass assigning all of the input fields.
         $stylist = new Stylist($request->all());
 
-        $stylist->slug = str_slug($request->first_name);
-
-        $latestSlug = 
-                    Stylist::whereRaw("slug RLIKE '^{$stylist->slug}(-[0-9]*)?$'")
-                    ->latest('id')
-                    ->pluck('slug');
-
-        if ($latestSlug) {
-            $pieces = explode('-', $latestSlug);
-
-            $number = intval(end($pieces));
-
-            $post->slug .= '-' . ($number + 1);
-        }
-
         $this->validate($request, [
             'first_name' => 'required',
             'bio' => 'required',

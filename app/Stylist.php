@@ -26,4 +26,33 @@ class Stylist extends Model implements StaplerableInterface
 
         parent::__construct($attributes);
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating( function($stylist) {
+
+            $stylist->setSlug($stylist);
+
+        });     
+    }
+
+    protected function setSlug($stylist)
+    {
+        $stylist->slug = str_slug($stylist->first_name);
+
+        $latestSlug = 
+                    static::whereRaw("slug RLIKE '^{$stylist->slug}(-[0-9]*)?$'")
+                    ->latest('id')
+                    ->pluck('slug');
+
+        if ($latestSlug) {
+            $pieces = explode('-', $latestSlug);
+
+            $number = intval(end($pieces));
+
+            $stylist->slug .= '-' . ($number + 1);
+        }
+    }
 }

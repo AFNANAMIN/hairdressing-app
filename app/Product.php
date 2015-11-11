@@ -26,4 +26,34 @@ class Product extends Model
     	$thirdProduct->order = 3;
     	$thirdProduct->save();
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating( function($product) {
+
+            $product->setSlug($product);
+
+        }); 
+    }
+
+    protected function setSlug($product)
+    {
+        $product->slug = str_slug($product->name);
+
+        $latestSlug = 
+                    static::whereRaw("slug RLIKE '^{$product->slug}(-[0-9]*)?$'")
+                    ->latest('id')
+                    ->pluck('slug');
+
+        if ($latestSlug) {
+            $pieces = explode('-', $latestSlug);
+
+            $number = intval(end($pieces));
+
+            $product->slug .= '-' . ($number + 1);
+        }
+    }
+
 }
