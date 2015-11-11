@@ -12,7 +12,7 @@ class Hours extends Model
 
     public function scopeCurrentHours($query)
     {
-    	return $query->where('active', '=', true)->get();
+        return $query->where('active', '=', true)->get();
     }
 
     public static function boot()
