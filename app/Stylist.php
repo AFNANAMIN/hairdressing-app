@@ -30,6 +30,7 @@ class Stylist extends Model implements StaplerableInterface
     public static function boot()
     {
         parent::boot();
+        static::bootStapler();
 
         static::creating( function($stylist) {
 
