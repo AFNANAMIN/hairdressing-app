@@ -144,6 +144,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,
         Codesleeve\LaravelStapler\Providers\L5ServiceProvider::class,
