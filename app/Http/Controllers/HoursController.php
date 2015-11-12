@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\HoursRequest;
 use App\Http\Controllers\Controller;
 
 use App\Hours;
 
 class HoursController extends Controller
 {
-
     function __construct()
     {
         $this->middleware('auth');
@@ -33,16 +33,11 @@ class HoursController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HoursRequest $request)
     {
         // Create and save a new season, mass assigning all of the input fields.
         $hours = new Hours($request->all());
         
-        $this->validate($request, [
-            'season' => 'required',
-            'description' => 'required',
-            'active' => 'required'
-        ]);
         $hours->save();
 
         return redirect(route('panel') . '#hours');
@@ -67,15 +62,10 @@ class HoursController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(HoursRequest $request, $id)
     {
         $hours = Hours::findOrFail($id);
         $hours->fill($request->all());
-        $this->validate($request, [
-            'season' => 'required',
-            'description' => 'required',
-            'active' => 'required'
-        ]);
         $hours->save();
 
         return redirect(route('panel') . '#hours');

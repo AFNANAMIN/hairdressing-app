@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Http\Requests\CreateStylistsRequest;
+use App\Http\Requests\UpdateStylistsRequest;
 use App\Http\Controllers\Controller;
 
 use App\Stylist;
@@ -33,16 +35,11 @@ class StylistsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateStylistsRequest $request)
     {
         // Create and save a new stylist, mass assigning all of the input fields.
         $stylist = new Stylist($request->all());
 
-        $this->validate($request, [
-            'first_name' => 'required',
-            'bio' => 'required',
-            'photo' => 'required'
-        ]);
         $stylist->save();
 
         return redirect(route('panel') . '#stylists');
@@ -67,14 +64,10 @@ class StylistsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateStylistsRequest $request, $id)
     {
         $stylist = Stylist::findOrFail($id);
         $stylist->fill($request->all());
-        $this->validate($request, [
-            'first_name' => 'required',
-            'bio' => 'required'
-        ]);
         $stylist->save();
 
         return redirect(route('panel') . '#stylists');
