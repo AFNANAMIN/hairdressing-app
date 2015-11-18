@@ -12,10 +12,32 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->rrmdir(public_path() . "/system");
+
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(HoursTableSeeder::class);
+        $this->call(StylistsTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
 
         Model::reguard();
+    }
+
+    public function rrmdir($dir) {
+       if (is_dir($dir)) {
+            $objects = scandir($dir);
+            foreach ($objects as $object) {
+                if ($object != "." && $object != "..") {
+                    if (filetype($dir."/".$object) == "dir") {
+                        $this->rrmdir($dir."/".$object);
+                    } else {
+                        unlink($dir."/".$object);
+                    }
+                }
+            }
+            reset($objects);
+            rmdir($dir);
+        }
     }
 }

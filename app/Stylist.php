@@ -11,7 +11,7 @@ class Stylist extends Model implements StaplerableInterface
 {
     use EloquentTrait;
 
-	protected $fillable = ['first_name', 'last_name', 'bio', 'photo'];
+	protected $fillable = ['first_name', 'bio', 'photo'];
 
 	public function __construct(array $attributes = array()) {
         $this->hasAttachedFile('photo', [
