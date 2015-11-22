@@ -46,37 +46,37 @@ Third-party libraries and dependencies
 ---
 The Hairdressing Salon web app uses the following libraries/packages/dependencies:
 + Bootstrap v3.3.5
-⋅⋅"Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web."⋅⋅
-⋅⋅[Bootstrap Website](http://getbootstrap.com/)⋅⋅
+  "Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web."
+  [Bootstrap Website](http://getbootstrap.com/)
 + jQuery 2.1.4
-⋅⋅"jQuery is a fast, small, and feature-rich JavaScript library.⋅⋅
-⋅⋅It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers."⋅⋅
-⋅⋅[jQuery Website](http://jquery.com/)⋅⋅
+  "jQuery is a fast, small, and feature-rich JavaScript library.
+  It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers."
+  [jQuery Website](http://jquery.com/)
 + Guzzle
-⋅⋅"Guzzle is a PHP HTTP client that makes it easy to send HTTP requests and trivial to integrate with web services."⋅⋅
-⋅⋅[Guzzle on GitHub](https://github.com/guzzle/guzzle)⋅⋅
+  "Guzzle is a PHP HTTP client that makes it easy to send HTTP requests and trivial to integrate with web services."
+  [Guzzle on GitHub](https://github.com/guzzle/guzzle)
 + Stapler
-⋅⋅"Laravel-Stapler is a Stapler-based file upload package for the Laravel framework."⋅⋅
-⋅⋅[Laravel Stapler on GitHub](https://github.com/CodeSleeve/laravel-stapler)⋅⋅
+  "Laravel-Stapler is a Stapler-based file upload package for the Laravel framework."
+  [Laravel Stapler on GitHub](https://github.com/CodeSleeve/laravel-stapler)
 + Laravel Forms & HTML
-⋅⋅A form-generation package for Laravel.⋅⋅
-⋅⋅[Laravel Collective Forms & HTML](http://laravelcollective.com/docs/5.1/html)⋅⋅
+  A form-generation package for Laravel.
+  [Laravel Collective Forms & HTML](http://laravelcollective.com/docs/5.1/html)
 + Laravel JS Validation
-⋅⋅"Laravel Javascript Validation allows to reuse your Laravel Validation Rules, Messages, FormRequest and Validators to validate forms transparently in client side⋅⋅
-⋅⋅without need to write any Javascript code or use HTML Builder Class."⋅⋅
-⋅⋅[Laravel JS Validation on GitHub](https://github.com/proengsoft/laravel-jsvalidation)⋅⋅
+  "Laravel Javascript Validation allows to reuse your Laravel Validation Rules, Messages, FormRequest and Validators to validate forms transparently in client side
+  without need to write any Javascript code or use HTML Builder Class."
+  [Laravel JS Validation on GitHub](https://github.com/proengsoft/laravel-jsvalidation)
 + Slick Slider by Ken Wheeler
-⋅⋅"slick is a responsive carousel jQuery plugin."⋅⋅
-⋅⋅[Slick Docs](http://kenwheeler.github.io/slick/)⋅⋅
+  "slick is a responsive carousel jQuery plugin."
+  [Slick Docs](http://kenwheeler.github.io/slick/)
 
 APIs
 ---
 + Mailgun
-⋅⋅"Transactional Email API Service for Developers"⋅⋅
-⋅⋅[Mailgun](https://www.mailgun.com/)⋅⋅
+  "Transactional Email API Service for Developers"
+  [Mailgun](https://www.mailgun.com/)
 + Google Maps Javascript API
-⋅⋅"Customize maps with your own content and imagery."⋅⋅
-⋅⋅[Google Maps JS API Docs](https://developers.google.com/maps/documentation/javascript/)⋅⋅
+  "Customize maps with your own content and imagery."
+  [Google Maps JS API Docs](https://developers.google.com/maps/documentation/javascript/)
 
 Credits
 ---
